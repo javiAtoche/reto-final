@@ -16,6 +16,7 @@
 package org.springframework.samples.petclinic.service;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Offer;
@@ -36,8 +37,8 @@ import org.springframework.samples.petclinic.model.Visit;
 public interface ClinicService {
 	
 	Offer findOfferById(int id) throws DataAccessException;
-	Collection<Offer> findAllOffers() throws DataAccessException;
-	void updateOffer(Offer offer,int id) throws DataAccessException;
+	Collection<Offer> findAllOffers() throws DataAccessException;	
+	void updateOffer(Offer offer) throws DataAccessException;
 	void saveOffer(Offer offer) throws DataAccessException;
 	void deleteOffer(Offer offer) throws DataAccessException;
 
