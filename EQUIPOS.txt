@@ -1,6 +1,7 @@
 FRONT
 ------
 - Javier Atoche
+- Victor Gonzalez
 
 
 
