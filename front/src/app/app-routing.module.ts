@@ -1,3 +1,4 @@
+import { ListOffersComponent } from './offers/list-offers/list-offers.component';
 /*
  *
  *  * Copyright 2016-2017 the original author or authors.
@@ -24,10 +25,13 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from './parts/page-not-found/page-not-found.component';
 import {WelcomeComponent} from './parts/welcome/welcome.component';
+import { OfferComponent } from './offers/offer/offer.component';
 
 const appRoutes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: '', component: WelcomeComponent},
+  {path: 'offers', component: ListOffersComponent},
+  {path: 'offers/:id', component: OfferComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
