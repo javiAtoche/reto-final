@@ -1,9 +1,11 @@
 FRONT
 ------
 - Javier Atoche
+- Fernando Reyes
 
 
 
 BACK
 ------
+- José Ordóñez
 - Dani
