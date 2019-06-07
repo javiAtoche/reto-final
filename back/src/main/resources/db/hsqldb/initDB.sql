@@ -16,6 +16,15 @@ CREATE TABLE offers (
  discount DOUBLE NOT NULL,
  expireDate DATE NOT NULL
  );
+
+
+CREATE TABLE offers (
+ id INTEGER IDENTIFY PRIMARY KEY,
+ title VARCHAR(30) NOT NULL,
+ description VARCHAR(30) NOT NULL,
+ discount DOUBLE NOT NULL,
+ expireDate DATE NOT NULL
+ );
  
 CREATE TABLE vets (
   id         INTEGER IDENTITY PRIMARY KEY,
