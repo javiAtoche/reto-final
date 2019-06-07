@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListOffersComponent } from './list-offers/list-offers.component';
-import { OffersFormComponent } from './offers-form/offers-form.component';
-import { OffersValidComponent } from './offers-valid/offers-valid.component';
+import { OfferComponent } from './offer/offer.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [ListOffersComponent, OffersFormComponent, OffersValidComponent]
+  declarations: [ListOffersComponent, OfferComponent]
 })
 export class OffersModule { }
