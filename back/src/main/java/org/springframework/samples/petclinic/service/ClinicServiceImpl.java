@@ -54,6 +54,7 @@ public class ClinicServiceImpl implements ClinicService {
     private VisitRepository visitRepository;
     private SpecialtyRepository specialtyRepository;
 	private PetTypeRepository petTypeRepository;
+	private OfferRepository offerRepository;
 
     @Autowired
      public ClinicServiceImpl(
