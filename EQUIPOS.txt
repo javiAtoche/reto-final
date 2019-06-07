@@ -8,10 +8,7 @@ FRONT
 
 BACK
 ------
-<<<<<<< HEAD
-- José Ordóñez
+- Jose
 - Dani
-=======
-- Josï¿½ Ordï¿½ï¿½ez
--Sergio GarcÃ­a
->>>>>>> 633908b3adfb3259268c616789ebee0124af1b70
+- Sergio Garcia
+
