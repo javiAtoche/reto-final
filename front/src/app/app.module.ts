@@ -1,3 +1,4 @@
+import { OffersModule } from './offers/offers.module';
 /*
  *
  *  * Copyright 2016-2017 the original author or authors.
@@ -53,7 +54,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SpecialtiesModule,
     PartsModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OffersModule
   ],
   providers: [
     HttpErrorHandler,
