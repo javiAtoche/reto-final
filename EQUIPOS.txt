@@ -8,4 +8,7 @@ FRONT
 
 BACK
 ------
-- Jos� Ord��ez
+- Jose
+- Dani
+- Sergio Garcia
+
