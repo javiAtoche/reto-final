@@ -11,10 +11,10 @@ DROP TABLE offers IF EXISTS;
 
 CREATE TABLE offers (
  id INTEGER IDENTIFY PRIMARY KEY,
- title VARCHAR(30),
- description VARCHAR(30),
- discount DOUBLE,
- expireDate DATE
+ title VARCHAR(30) NOT NULL,
+ description VARCHAR(30) NOT NULL,
+ discount DOUBLE NOT NULL,
+ expireDate DATE NOT NULL
  );
  
 CREATE TABLE vets (
