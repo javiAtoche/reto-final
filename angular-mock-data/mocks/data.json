@@ -1,0 +1,14 @@
+{
+"id":"1",
+"title":"oferta1" ,
+"description":"oferta1 por tiempo limitado",
+"discount":"8.0",
+"expireDate":"05-07-2019"
+},
+{
+"id":"2",
+"title":"oferta2" ,
+"description":"oferta2 por tiempo limitado",
+"discount":"10.0",
+"expireDate":"06-07-2019"
+}
