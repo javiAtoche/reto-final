@@ -7,8 +7,16 @@ DROP TABLE types IF EXISTS;
 DROP TABLE owners IF EXISTS;
 DROP TABLE roles IF EXISTS;
 DROP TABLE users IF EXISTS;
+DROP TABLE offers IF EXISTS;
 
-
+CREATE TABLE offers (
+ id INTEGER IDENTIFY PRIMARY KEY,
+ title VARCHAR(30),
+ description VARCHAR(30),
+ discount DOUBLE,
+ expireDate DATE
+ );
+ 
 CREATE TABLE vets (
   id         INTEGER IDENTITY PRIMARY KEY,
   first_name VARCHAR(30),
