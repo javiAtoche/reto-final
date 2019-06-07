@@ -36,12 +36,22 @@ public class OfferRestController {
 			return new ResponseEntity<Collection<Offer>>(HttpStatus.NOT_FOUND);
 		}
 		
-		return new ResponseEntity<Collection<Offer>>(HttpStatus.OK);
+		return new ResponseEntity<Collection<Offer>>(offers, HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/valids", method = RequestMethod.GET)
+	public ResponseEntity<Collection<Offer>> getOfferValidList(){
+		Collection<Offer> offers = this.clinicService.findAllOffersValids();
+		
+		if (offers.isEmpty()) {
+			return new ResponseEntity<Collection<Offer>>(HttpStatus.NOT_FOUND);
+		}
+		
+		return new ResponseEntity<Collection<Offer>>(offers, HttpStatus.OK);
+	}
 	
 	//METODO GET PARA RECIBIR UNA OFERTA DADA UNA ID
-	@RequestMapping(value = "/*/id/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Offer> getOffer(@PathVariable("id") int id){
 		Offer offer = null;
 		offer = this.clinicService.findOfferById(id);
@@ -80,6 +90,9 @@ public class OfferRestController {
 		this.clinicService.deleteOffer(offer);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
+	
+	//METODO QUE ACTUALIZA UNA OFERTA
+	
 	
 	
 	
