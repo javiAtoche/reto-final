@@ -13,10 +13,12 @@ public interface OfferRepository extends JpaRepository<Offer, Serializable>{
 	
 	void deleteOffer(Offer offer);
 	
-	Collection <Offer> getOffers();
+	void updateOffer(Offer offer,int id);
 	
-	Offer getOfferById(int id);
+	Collection <Offer> findOffers();
 	
-	Collection <Offer> getValidateOffers(Date dateNow);
+	Offer findById(int id);
+	
+	Collection <Offer> findValidateOffers(Date dateNow);
 
 }
