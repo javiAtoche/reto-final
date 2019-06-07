@@ -17,7 +17,6 @@ package org.springframework.samples.petclinic.service;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -300,6 +299,13 @@ public class ClinicServiceImpl implements ClinicService {
 	public Collection<Offer> findAllOffers() throws DataAccessException {
 		return offerRepository.findAll();
 	}
+	
+	/***read***/
+	@Override
+	@Transactional(readOnly = true)
+	public Collection<Offer> findAllOffersValids() throws DataAccessException {
+		return offerRepository.findByExpireDateAfter(new Date());
+	}
 
 	/***update***/
 	@Override
@@ -327,7 +333,7 @@ public class ClinicServiceImpl implements ClinicService {
 	public Offer findOfferById(int id) throws DataAccessException {
 		Offer offer = null;
 		try {
-			offer = offerRepository.findById(id);
+			offer = offerRepository.findOne(id);
 		} catch (ObjectRetrievalFailureException|EmptyResultDataAccessException e) {
 		// just ignore not found exceptions for Jdbc/Jpa realization
 			return null;

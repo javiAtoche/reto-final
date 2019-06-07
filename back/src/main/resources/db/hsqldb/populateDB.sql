@@ -58,6 +58,7 @@ INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_OWNER_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_VET_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_ADMIN');
 
-INSERT INTO offers VALUES (1,'Great offer in Pet-Care', 'We cut dog balls free', 100.0, '2018-01-10');
-INSERT INTO offers VALUES (2,'Great offer in Cats-Care', 'We eutanize them free', 100.0, '20-01-10');
+INSERT INTO offers VALUES (1,'Great offer in Pet-Care', 'We cut dog balls free', 100.0, '2019-01-10');
+INSERT INTO offers VALUES (2,'Great offer in Cats-Care', 'We eutanize them free', 100.0, '2019-01-10');
+INSERT INTO offers VALUES (3,'Is valid', 'We eutanize them free', 100.0, '2020-01-10');
 
