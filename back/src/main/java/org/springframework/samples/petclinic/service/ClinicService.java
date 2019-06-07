@@ -37,7 +37,7 @@ public interface ClinicService {
 	
 	Offer findOfferById(int id) throws DataAccessException;
 	Collection<Offer> findAllOffers() throws DataAccessException;
-	void updateOffer(Offer offer,int id) throws DataAccessException;
+	void updateOffer(Offer offer) throws DataAccessException;
 	void saveOffer(Offer offer) throws DataAccessException;
 	void deleteOffer(Offer offer) throws DataAccessException;
 

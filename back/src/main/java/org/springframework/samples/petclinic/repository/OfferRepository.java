@@ -9,7 +9,7 @@ import org.springframework.samples.petclinic.model.Offer;
 
 public interface OfferRepository extends JpaRepository<Offer, Serializable>{
 	
-	void createOffer(Offer offer);
+	void saveOffer(Offer offer);
 	
 	void deleteOffer(Offer offer);
 	

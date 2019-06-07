@@ -290,25 +290,37 @@ public class ClinicServiceImpl implements ClinicService {
 		return visitRepository.findByPetId(petId);
 	}
 	
+	/*******************************************************/
+	
+	/***read***/
 	@Override
 	@Transactional(readOnly = true)
 	public Collection<Offer> findAllOffers() throws DataAccessException {
 		return offerRepository.findAll();
 	}
 
-@Override
+	/***update***/
+	@Override
+	public void updateOffer(Offer offer) throws DataAccessException {
+		offerRepository.save(findOfferById(offer.getId()));		
+	}
+	
+	/***delete***/
+	@Override
 	@Transactional
 	public void deleteOffer(Offer offer) throws DataAccessException {
 		offerRepository.delete(offer);
 	}
 
-@Override
+	/***create***/
+	@Override
 	@Transactional
 	public void saveOffer(Offer offer) throws DataAccessException {
 		offerRepository.save(offer);
 	}
 
-@Override
+	/***buscar offer por su id***/
+	@Override
 	@Transactional(readOnly = true)
 	public Offer findOfferById(int id) throws DataAccessException {
 		Offer offer = null;
@@ -320,6 +332,8 @@ public class ClinicServiceImpl implements ClinicService {
 		}
 		return offer;
 	}
+
+	
 
 
 }
