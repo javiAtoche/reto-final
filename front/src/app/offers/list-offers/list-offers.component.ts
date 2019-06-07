@@ -22,4 +22,8 @@ export class ListOffersComponent implements OnInit {
   onSelect(offer: Offers) {
     this.router.navigate(['/offers', offer.id]);
   }
+
+  addOffer() {
+    this.router.navigate(['/offers/add']);
+  }
 }

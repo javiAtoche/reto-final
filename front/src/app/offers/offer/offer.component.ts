@@ -25,4 +25,11 @@ export class OfferComponent implements OnInit {
     );
   }
 
+  gotoOffersList() {
+    this.router.navigate(['/offers']);
+  }
+
+  editOffer() {
+    this.router.navigate(['/offers', this.offer.id, 'edit']);
+  }
 }
