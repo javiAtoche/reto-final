@@ -1,9 +1,14 @@
 FRONT
 ------
 - Javier Atoche
+<<<<<<< HEAD
 - Victor Gonzalez
+=======
+- Fernando Reyes
+>>>>>>> 98fb480198d2d4a6c9c470ef0027f2c330071122
 
 
 
 BACK
 ------
+- José Ordóñez
