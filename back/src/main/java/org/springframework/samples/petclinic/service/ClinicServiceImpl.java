@@ -22,12 +22,14 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.orm.ObjectRetrievalFailureException;
+import org.springframework.samples.petclinic.model.Offer;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.repository.OfferRepository;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
 import org.springframework.samples.petclinic.repository.PetTypeRepository;
@@ -63,13 +65,15 @@ public class ClinicServiceImpl implements ClinicService {
     		 OwnerRepository ownerRepository,
     		 VisitRepository visitRepository,
     		 SpecialtyRepository specialtyRepository,
-			 PetTypeRepository petTypeRepository) {
+			 PetTypeRepository petTypeRepository,
+			 OfferRepository offerRepository) {
         this.petRepository = petRepository;
         this.vetRepository = vetRepository;
         this.ownerRepository = ownerRepository;
         this.visitRepository = visitRepository;
         this.specialtyRepository = specialtyRepository; 
 		this.petTypeRepository = petTypeRepository;
+		this.offerRepository = offerRepository;
     }
 
 	@Override
@@ -286,7 +290,36 @@ public class ClinicServiceImpl implements ClinicService {
 		return visitRepository.findByPetId(petId);
 	}
 	
-	
+	@Override
+	@Transactional(readOnly = true)
+	public Collection<Offer> findAllOffers() throws DataAccessException {
+		return offerRepository.findAll();
+	}
+
+@Override
+	@Transactional
+	public void deleteOffer(Offer offer) throws DataAccessException {
+		offerRepository.delete(offer);
+	}
+
+@Override
+	@Transactional
+	public void saveOffer(Offer offer) throws DataAccessException {
+		offerRepository.save(offer);
+	}
+
+@Override
+	@Transactional(readOnly = true)
+	public Offer findOfferById(int id) throws DataAccessException {
+		Offer offer = null;
+		try {
+			offer = offerRepository.findById(id);
+		} catch (ObjectRetrievalFailureException|EmptyResultDataAccessException e) {
+		// just ignore not found exceptions for Jdbc/Jpa realization
+			return null;
+		}
+		return offer;
+	}
 
 
 }
